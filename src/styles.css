@@ -18,7 +18,9 @@ body {
 }
 
 button,
-input {
+input,
+select,
+textarea {
   font: inherit;
 }
 
@@ -214,13 +216,166 @@ label {
   gap: 8px;
 }
 
-input {
+input,
+select,
+textarea {
   width: 100%;
   min-height: 42px;
   border: 1px solid var(--border);
   border-radius: 6px;
   padding: 0 12px;
   color: #172033;
+  background: #ffffff;
+}
+
+select:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+}
+
+/* ---------- 台账表单与表格 ---------- */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  align-items: end;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px dashed var(--border);
+}
+
+.form-grid .wide {
+  grid-column: 1 / -1;
+}
+
+.form-error {
+  color: var(--warn);
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.hint {
+  color: #64748b;
+  font-size: 12.5px;
+  margin: 4px 0 0;
+  line-height: 1.6;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+th {
+  text-align: left;
+  color: #64748b;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #eef2f8;
+  vertical-align: middle;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.empty {
+  color: #94a3b8;
+  text-align: center;
+  padding: 18px 4px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.badge-ok {
+  background: #e7f6ef;
+  color: #047857;
+}
+
+.badge-warn {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.badge-danger {
+  background: #fde2e2;
+  color: #b91c1c;
+}
+
+.badge-info {
+  background: #e0eaff;
+  color: #1d4ed8;
+}
+
+.lens-list {
+  margin-bottom: 24px;
+}
+
+.lens-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px dashed var(--border);
+}
+
+.lens-item:last-child {
+  border-bottom: none;
+}
+
+.lens-item strong {
+  font-size: 14px;
+}
+
+.rule-list {
+  margin: 0;
+  padding-left: 18px;
+  color: #526070;
+  font-size: 13.5px;
+  line-height: 1.9;
+}
+
+.row-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.small-btn {
+  min-height: 30px;
+  padding: 0 10px;
+  font-size: 13px;
+}
+
+.section-gap {
+  margin-bottom: 20px;
+}
+
+.conflict-rule {
+  color: #b91c1c;
+  font-weight: 600;
 }
 
 .record-list {
